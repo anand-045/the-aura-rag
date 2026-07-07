@@ -1,4 +1,4 @@
-name: Deploy The Aura Rag  to Azure
+name: Deploy The Aura Rag to Azure
 
 on:
   push:
@@ -10,19 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
       - name: Deploy to Azure App Service
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
-          app-name: 'the-aura-rag'
+          app-name: the-aura-rag
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}

@@ -1,6 +1,6 @@
+streamlit
 python-dotenv
 openai
-pymupdf
+PyMuPDF
 azure-search-documents
-streamlit
-fitz
+azure-core
